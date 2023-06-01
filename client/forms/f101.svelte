@@ -3,7 +3,7 @@ import Input from './fc/input.svelte'
 import Number from './fc/number.svelte'
 import Phone_number from './fc/phone-number.svelte'
 import BType from './fc/btype.svelte'
-
+import Group from './fc/group.svelte'
 
 //const o = {name:'firstname', value:'Peter'};
 
@@ -65,7 +65,7 @@ const items = [
 
 
 
-<vbox class="wrap">
+<Group class="vbox wrap">
 
 {#each items as item, j}
 
@@ -76,12 +76,13 @@ const items = [
 
 {/each}
 
-</vbox>
+</Group>
 
+
+<Group>
 
 <h3 class="label">public</h3>
 
-<vbox class="building-types wrap">
 
     <BType code="HC">Health Care Center</BType>
     <BType code="HP">Hospital</BType>
@@ -96,11 +97,9 @@ const items = [
     <BType code="EN">Entertainment</BType>
     <BType code="GO">Golf Course Clubhouse</BType>
 
-</vbox>
 
 <h3 class="label">Commercial</h3>
 
-<vbox class="building-types wrap">
 
     <BType code="PL">Parking Lot / Structure</BType>
     <BType code="SP">Shopping Center / Retail</BType>
@@ -112,11 +111,9 @@ const items = [
     <BType code="MA">Manufacturing (&lt;1000 คนขึ้นไป)</BType>
 
 
-</vbox>
 
     <h3 class="label">Residential</h3>
 
-<vbox class="building-types wrap">
 
 
   <BType code="CO">Apartment/Condo</BType>
@@ -129,7 +126,7 @@ const items = [
   <BType code="X">Cancel Building</BType>
 
 
-</vbox>
+</Group>
 
 
 
@@ -138,13 +135,17 @@ const items = [
 
 <style>
 
+h3 {
+  width:100%;
+}
+
 vbox {
   background-color: rgba(80,120,200,0.5);
   width: 100%;
 }
 
 
-vbox.building-types {
+.building-types {
   width:100%;
 }
 
