@@ -1,0 +1,206 @@
+
+.block {
+  display: block;   /* to remove inline */
+}
+
+.flex {
+  display: flex;   /* to remove inline */
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rm {
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rg {
+  font-weight: 800;
+  font-style: normal;
+}
+
+.im {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ig {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* possible conflicts */
+
+body {
+  box-sizing: border-box;
+}
+
+
+hbox, .hbox {
+  display: inline-flex;
+  flex-direction: row;
+  white-space:nowrap; /* override */
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+
+.qc {text-align: center;}
+.qr {text-align:right;}
+.ql {text-align:left;}
+.qj {text-align:justify;}
+
+
+
+hbox.wrap {
+  white-space: normal;
+}
+
+hbox.qc {
+  justify-content: center;
+}
+
+
+
+hbox.qr {
+  justify-content: flex-end;
+}
+
+hbox.qj {
+  justify-content: space-between;
+  width:100%;
+}
+
+/*
+hbox.align-center, hbox.vcenter {
+  align-items: center;
+}
+*/
+
+hbox.vcenter {
+  align-items: center;
+}
+
+hbox.vbot {
+  align-items: flex-end;
+}
+
+hbox.vtop {
+  align-items: flex-start;
+}
+
+hbox.baseline, hbox.vbaseline {
+  align-items: baseline; /* default */
+}
+
+
+hbox.to-hsize {
+  width:100%;
+}
+
+/*
+    works only when wrap
+    => align-content
+*/
+
+hbox.align-center {
+  align-content: center;
+}
+
+
+.zpad {
+  padding:0;
+}
+
+.zmargin {
+  margin:0;
+}
+
+
+.space-equally, .space-evenly {
+  justify-content: space-evenly;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+
+hbox.to-hsize {
+  width:100%;
+}
+
+vbox, .vbox {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  max-width:100%;
+}
+
+vbox.to-vsize {
+  height:100%;
+}
+
+vbox.to-hsize {
+  width:100%;
+}
+
+
+vbox.qc, vbox.align-center {
+  align-items: center;
+}
+
+vbox.ql, vbox.align-left {
+  align-items: flex-start;
+}
+
+vbox.qr, vbox.align-left {
+  align-items: flex-end;
+}
+
+vbox.qj, vbox.align-stretch {
+  align-items: stretch;
+}
+
+vbox.self-center {
+  align-self: center;
+}
+
+
+vbox.wrap {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.no-wrap {
+  flex-wrap: nowrap;
+}
+
+
+hrule {
+  display: block;
+  border-top: 1px solid black;
+  width:100%;
+  height:1px;
+  margin: 0.5em 0;
+}
+
+
+hbox.vstretch,
+vbox.hstretch {
+  align-items: stretch;
+}
+
+
+.nodisplay {display:none;}
+.hide {visibility: hidden;}
