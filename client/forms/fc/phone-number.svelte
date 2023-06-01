@@ -86,6 +86,8 @@ input {
   outline: none;
   border: none;
   background-color: transparent;
+  width:100%;
+
 }
 
 .error {

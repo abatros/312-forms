@@ -55,10 +55,16 @@ const items = [
     components will show horizontally, and wrap.
 -->
 
-<hbox class="wrap">
+<hbox class="wrap to-hsize qc">
 
   <Input --width="100%" label="Street Name"
       attributes={{name:'firstname', value:''}} />
+
+  <Input --width="30%" label="District"
+          attributes={{name:'district', value:''}} />
+
+  <Input --width="40%" label="Sub District"
+        attributes={{name:'sdistrict', value:''}} />
 
 
 </hbox>
@@ -123,7 +129,7 @@ const items = [
   <BType code="OT">Other</BType>
   <BType code="SF">Single Family</BType>
   <BType code="UN">Unknown</BType>
-  <BType code="X">Cancel Building</BType>
+  <BType code="X">Building Ruin</BType>
 
 
 </Group>
