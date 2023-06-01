@@ -1,32 +1,68 @@
 <script>
+import {onMount} from 'svelte';
+
 export let attributes
 //export let value = '';
 //export let placeholder = '';
 
 //console.log({})
 
-let input;
 export let width = `${4}rem`;
 export let label;
+
 const {fontSize, name, value, placeholder='', color='black'} = attributes;
+
+
+let input;
+let invalid = false;
+
+function every_change(e) {
+  console.log(`Number/change:`,e)
+  console.log(`Number/change value:`, input.value)
+}
+
+const regex = new RegExp('[0-9\-\s]*');
+
+function every_input(e) {
+  console.log(`Number/input:`,e)
+  console.log(`Number/input value:`, input.value)
+
+  const match = /^[0-9\ \-]*$/.test(input.value);
+
+  invalid =  !match;
+  console.log(`[${input.value}] => match:${match} invalid:${invalid}`)
+
+//  invalid = isNaN(input.value)
+  if (invalid) {
+    input.classList.add('error')
+  } else {
+    input.classList.remove('error')
+  }
+}
+
+
+onMount(()=>{
+  input.classList.remove('error')
+  invalid = regex.test(input.value)
+})
 
 </script>
 
 
 <label class="vbox">
   {label}
-<input
-  type="text"
+<input class="number error"
   bind:this={input}
+  on:change={every_change}
+  on:input={every_input}
   name={name}
   value={value}
   placeholder={placeholder}
   >
 </label>
 
-
-
 <style>
+
 
 
 label {
@@ -41,7 +77,6 @@ label {
   border-radius: 6px;
   align-items: flex-start;
   background-color: rgba(250, 250, 250, 0.8);
-  color: var(--color, 'black')
 }
 
 input {
@@ -53,5 +88,8 @@ input {
   background-color: transparent;
 }
 
+.error {
+  color: red;
+}
 
 </style>

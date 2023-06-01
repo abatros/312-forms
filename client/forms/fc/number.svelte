@@ -8,8 +8,9 @@ export let attributes
 //console.log({})
 
 export let width = `${4}rem`;
+export let label;
 
-const {label, fontSize, name, value, placeholder='', color='black'} = attributes;
+const {fontSize, name, value, placeholder='', color='black'} = attributes;
 
 
 let input;
