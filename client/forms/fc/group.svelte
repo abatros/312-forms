@@ -28,7 +28,7 @@ selected.subscribe((e)=>{
     if (btn.getAttribute('code') == e) {
       btn.classList.add('hotx')
     } else {
-      btn.classList.remove('hotx')      
+      btn.classList.remove('hotx')
     }
   })
 })
@@ -44,5 +44,6 @@ hbox {
   width:100%;
   border: 1px solid green;
   flex-wrap: wrap;
+  justify-content: center;
 }
 </style>

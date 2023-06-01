@@ -137,6 +137,7 @@ const items = [
 
 h3 {
   width:100%;
+  text-align: center;
 }
 
 vbox {
